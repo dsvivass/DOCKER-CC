@@ -13,18 +13,35 @@ Docker is an open platform for developers and sysadmins to build, ship, and run 
 
 `docker help` - List Docker commands
 
-`docker run` - Run a command in a new container
+## Docker CLI - Running and stopping containers
 
-`docker ps` - List containers
+**< image >** The name of the image as you find it in the container registry. **< container >** - The name or ID of the container
 
-`docker images` - List images
+`docker pull <image>` - Pull an image or a repository from a registry
 
-`docker rmi` - Remove one or more images
+`docker run <image>` - Run a command in a new container
 
-`docker rm` - Remove one or more containers
+`docker run -d <image>` - Run a container in the background and print the new container ID
 
-`docker pull` - Pull an image or a repository from a registry
+`docker start <container>` - Start one or more stopped containers
 
-`docker push` - Push an image or a repository to a registry
+`docker ps` - List running containers
 
-`docker search` - Search the Docker Hub for images
+`docker ps -a` - List all containers
+
+`docker stop <container>` - Stop one or more running containers
+
+`docker restart <container>` - Restart one or more containers
+
+`docker kill <container>` - Kill one or more running containers
+
+`docker image inspect <image>` - Display detailed information on one or more images
+
+## Docker CLI - Limits
+
+`docker run --memory=<memory>` - Memory limit **example:** `docker run --memory="256m" nginx`
+
+`docker run --cpus=<cpus>` - CPU limit **example:** `docker run --cpus=".5" nginx`
+
+
+
